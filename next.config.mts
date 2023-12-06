@@ -19,6 +19,14 @@ const nextConfig = withMDX({
     deviceSizes: [
       320, 420, 768, 1024, 1200, 1440, 1920, 2560, 3000, 3500, 4000,
     ],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+        port: '',
+        pathname: '**',
+      },
+    ],
   },
   // Append the default value with md extensions
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],

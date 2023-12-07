@@ -1,3 +1,6 @@
+/**
+ * Default fetcher function for SWR (client-side fetching library).
+ */
 export default async function swrFetcher(url: string) {
   const res = await fetch(url);
 

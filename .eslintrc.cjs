@@ -39,6 +39,7 @@ module.exports = {
     'jsx-a11y/label-has-for': 'off', // deprecated
     'import/prefer-default-export': 'off',
     'react/require-default-props': 'off',
+    'react-hooks/exhaustive-deps': 'off',
     // downgrades from error to warn
     'no-unused-vars': 'warn',
     'prefer-const': 'warn',

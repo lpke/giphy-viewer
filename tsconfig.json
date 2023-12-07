@@ -17,9 +17,7 @@
     "jsx": "preserve",
     "noUncheckedIndexedAccess": true,
     "plugins": [
-      {
-        "name": "next"
-      }
+      { "name": "next" }
     ],
     "baseUrl": ".",
     "paths": {

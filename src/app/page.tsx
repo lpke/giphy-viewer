@@ -49,7 +49,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex h-20 flex-row justify-between w-full">
+      <div className="flex h-20 flex-row items-center justify-between w-full py-2 px-[6px] md:px-10">
         <LimitDropdown limit={limit} setLimit={setLimit} />
 
         <SearchInput

@@ -14,7 +14,7 @@ export default function DisplayGrid({ gifs = [] }: DisplayGridProps) {
   const hasGifs = gifs.length > 0;
 
   return (
-    <div className="flex w-full flex-row flex-wrap justify-center p-[6px] md:p-6">
+    <div className="flex w-full flex-row flex-wrap justify-center p-[6px] !pt-2 md:p-6">
       {hasGifs
         ? gifs.map((gif) => (
             <Gif

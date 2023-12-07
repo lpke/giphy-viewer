@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { AppContext } from "@/utils/context";
+import { useState } from 'react';
 
 type SearchInputProps = {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -12,14 +11,21 @@ export default function SearchInput({
   onKeyDown,
   onButtonClick,
 }: SearchInputProps) {
-  const { darkMode, setDarkMode } = useContext(AppContext);
+  const defaultPlaceholder = 'search giphy';
+  const [placeholder, setPlaceholder] = useState(defaultPlaceholder);
 
   return (
-    <div className="">
-      <input className={`${darkMode ? 'bg-gray-600' : 'bg-white'}`} type="text" onChange={onChange} onKeyDown={onKeyDown} />
-      <button type="button" onClick={onButtonClick}>
-        submit
-      </button>
-    </div>
+    <input
+      className="min-w-[150px] rounded-full bg-white px-5 py-3 text-center
+      text-gray-950 shadow-gray-950 outline-none transition-all duration-500
+      hover:shadow-xl focus:shadow-xl dark:bg-gray-600 dark:text-gray-100
+      md:min-w-[300px]"
+      type="text"
+      placeholder={placeholder}
+      onChange={onChange}
+      onKeyDown={onKeyDown}
+      onFocus={() => setPlaceholder('')}
+      onBlur={() => setPlaceholder(defaultPlaceholder)}
+    />
   );
 }

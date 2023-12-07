@@ -24,7 +24,7 @@ export default function Gif({ src, alt }: GifProps) {
 
   return (
     <div
-      className="relative m-[6px] md:m-[7px] overflow-hidden rounded-lg shadow-md transition-all hover:z-10 md:hover:scale-[1.3]"
+      className="relative m-[6px] md:m-[7px] overflow-hidden duration-300 rounded-lg shadow-md transition-all hover:z-10 md:hover:scale-[1.3]"
       style={{
         width: width,
         height: height,
@@ -42,8 +42,8 @@ export default function Gif({ src, alt }: GifProps) {
           loadingSkeletonXML(
             width,
             height,
-            darkMode ? gray[700] : gray[200],
-            darkMode ? '#323a49' : '#dcdfe4',
+            darkMode ? gray[700] : gray[300],
+            darkMode ? '#323a49' : '#c2c9d0',
           ),
         )}
       />

@@ -1,9 +1,9 @@
 import type { NextRequest } from 'next/server';
 
 export async function GET(req: NextRequest) {
-  const { searchParams } = req.nextUrl;
-
   try {
+    const { searchParams } = req.nextUrl;
+
     const res = await fetch(
       `https://api.giphy.com/v1/gifs/trending?api_key=${
         process.env.GIPHY_API_KEY

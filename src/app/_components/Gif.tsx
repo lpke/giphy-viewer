@@ -18,8 +18,9 @@ type GifProps = {
 export default function Gif({ src, alt }: GifProps) {
   const { darkMode } = useContext(AppContext);
 
-  const width = 200;
-  const height = 200;
+  // One way I'd like to improve this is to make the sizing dynamic
+  const width = 168;
+  const height = 168;
 
   return (
     <div
@@ -29,8 +30,9 @@ export default function Gif({ src, alt }: GifProps) {
       <Image
         src={src}
         alt={alt}
-        fill
         className="object-cover"
+        sizes="200"
+        fill
         placeholder={toDataURL(
           loadingSkeletonXML(
             width,

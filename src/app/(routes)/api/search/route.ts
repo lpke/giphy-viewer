@@ -2,7 +2,17 @@ import type { NextRequest } from 'next/server';
 
 export async function GET(req: NextRequest) {
   try {
-    return Response.json({}, { status: 200 });
+    const { searchParams } = req.nextUrl;
+
+    const res = await fetch(
+      `https://api.giphy.com/v1/gifs/search?api_key=${
+        process.env.GIPHY_API_KEY
+      }&${searchParams.toString()}`,
+    );
+    const data = await res.json();
+    return Response.json(data, {
+      status: data?.meta?.status,
+    });
   } catch (err) {
     return Response.json(
       {

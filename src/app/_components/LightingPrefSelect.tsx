@@ -7,7 +7,10 @@ export default function LightingPrefSelect() {
   const classes = 'h-[29px] w-[29px]';
 
   return (
-    <button onClick={() => setDarkMode((prev) => !prev)}>
+    <button
+      className="p-2"
+      onClick={() => setDarkMode((prev) => !prev)}
+    >
       {darkMode ? (
         <DarkIcon className={classes} />
       ) : (

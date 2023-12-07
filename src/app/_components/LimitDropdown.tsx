@@ -13,7 +13,7 @@ const MenuItem = ({
 }) => {
   return (
     <button
-      className={`py-3 hover:bg-gray-200 dark:hover:bg-gray-700 ${
+      className={`py-3 first-of-type:mt-3 hover:bg-gray-200 dark:hover:bg-gray-700 ${
         value === limit
           ? 'bg-gray-100 font-bold text-black dark:bg-gray-500 dark:bg-opacity-50 dark:text-white'
           : ''
@@ -51,28 +51,32 @@ export default function LimitDropdown({ limit, setLimit }: LimitDropdownProps) {
 
   return (
     <div className="relative">
-      <button type="button" onClick={handleIconClick}>
+      <button
+        className="rounded-full p-2 transition-all duration-500 hover:bg-gray-100 dark:hover:bg-gray-700"
+        type="button"
+        onClick={handleIconClick}
+      >
         <SettingIcon className="h-7 w-7" />
       </button>
 
-      {open && (
-        <div
-          ref={menuRef}
-          className="absolute left-0 top-11 z-50 flex w-[110px] flex-col rounded-lg bg-white py-3 shadow-[rgba(0,_0,_0,_0.56)_0px_22px_70px_4px] dark:bg-gray-600"
-        >
-          {values.map((value) => (
-            <MenuItem
-              key={value}
-              value={value}
-              limit={limit}
-              onClick={() => {
-                setLimit(value);
-                setOpen(false);
-              }}
-            />
-          ))}
-        </div>
-      )}
+      <div
+        ref={menuRef}
+        className={`absolute left-0 top-11 z-50 flex w-[110px] flex-col overflow-hidden rounded-lg bg-white shadow-[rgba(0,_0,_0,_0.56)_0px_22px_70px_4px] transition-all dark:bg-gray-600 ${
+          open ? 'h-[285px]' : 'h-0'
+        }`}
+      >
+        {values.map((value) => (
+          <MenuItem
+            key={value}
+            value={value}
+            limit={limit}
+            onClick={() => {
+              setLimit(value);
+              setOpen(false);
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
 }

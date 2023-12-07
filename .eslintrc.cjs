@@ -40,6 +40,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'react/require-default-props': 'off',
     'react-hooks/exhaustive-deps': 'off',
+    'prefer-destructuring': 'off',
     // downgrades from error to warn
     'no-unused-vars': 'warn',
     'prefer-const': 'warn',

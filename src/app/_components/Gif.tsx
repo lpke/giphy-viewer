@@ -1,10 +1,14 @@
 'use client';
 
+import { useContext } from 'react';
 import Image from 'next/image';
+import { AppContext } from '@/utils/context';
 import { loadingSkeletonXML, toDataURL } from '@/utils/svg';
 import resolveConfig from 'tailwindcss/resolveConfig';
 import tailwindConfig from 'tailwind.config';
+
 const twConfig = resolveConfig(tailwindConfig);
+const gray = twConfig.theme.colors.gray;
 
 type GifProps = {
   src: string;
@@ -12,6 +16,8 @@ type GifProps = {
 };
 
 export default function Gif({ src, alt }: GifProps) {
+  const { darkMode } = useContext(AppContext);
+
   const width = 200;
   const height = 200;
 
@@ -29,8 +35,8 @@ export default function Gif({ src, alt }: GifProps) {
           loadingSkeletonXML(
             width,
             height,
-            twConfig.theme.colors.gray[700],
-            '#323a49',
+            darkMode ? gray[700] : gray[200],
+            darkMode ? '#323a49' : '#dcdfe4',
           ),
         )}
       />

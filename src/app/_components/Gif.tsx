@@ -24,12 +24,10 @@ export default function Gif({ src, alt }: GifProps) {
 
   return (
     <div
-      className="relative m-[6px] md:m-[7px] overflow-hidden duration-300 rounded-lg shadow-md transition-all hover:z-10 md:hover:scale-[1.3]"
+      className="relative m-[6px] overflow-hidden rounded-lg shadow-[0_4px_6px_-1px_rgba(0,_0,_0,_0.3),_0_2px_4px_-1px_rgba(0,_0,_0,_0.1)] transition-all duration-300 hover:z-10 hover:shadow-[rgba(0,_0,_0,_0.56)_0px_22px_70px_4px] md:m-[7px] md:hover:scale-[1.3]"
       style={{
         width: width,
         height: height,
-        boxShadow:
-          '0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.1)',
       }}
     >
       <Image

@@ -49,10 +49,11 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex h-20 flex-row items-center justify-between w-full py-2 px-[6px] md:px-10">
+      <div className="flex h-[100px] w-full flex-row items-center justify-between px-[6px] py-2 md:px-10">
         <LimitDropdown limit={limit} setLimit={setLimit} />
 
         <SearchInput
+          id="search"
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
           onButtonClick={handleSubmit}

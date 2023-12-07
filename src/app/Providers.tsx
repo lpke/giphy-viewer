@@ -19,7 +19,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     <SWRConfig value={swrGlobalConfig}>
       <AppContextProvider value={{ darkMode, setDarkMode }} deps={[darkMode]}>
         <div className={darkMode ? 'dark' : 'light'}>
-          <main className="text-lg min-h-[100svh] w-full bg-gray-200 text-gray-950 transition-colors selection:bg-indigo-300 dark:bg-gray-800 dark:text-gray-100 dark:selection:bg-indigo-900">
+          <main className="text-lg min-h-[100svh] w-full bg-gray-200 text-gray-950 transition-colors selection:bg-teal-300 dark:bg-gray-800 dark:text-gray-100 dark:selection:bg-teal-600">
             {children}
           </main>
         </div>

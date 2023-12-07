@@ -18,20 +18,25 @@ type GifProps = {
 export default function Gif({ src, alt }: GifProps) {
   const { darkMode } = useContext(AppContext);
 
-  // One way I'd like to improve this is to make the sizing dynamic
+  // given more time - I would make this dynamic or user-controllable
   const width = 168;
   const height = 168;
 
   return (
     <div
-      className="relative m-[6px] overflow-hidden rounded-lg"
-      style={{ width: width, height: height }}
+      className="relative m-[6px] md:m-[7px] overflow-hidden rounded-lg shadow-md transition-all hover:z-10 md:hover:scale-[1.3]"
+      style={{
+        width: width,
+        height: height,
+        boxShadow:
+          '0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.1)',
+      }}
     >
       <Image
         src={src}
         alt={alt}
         className="object-cover"
-        sizes="200"
+        sizes="300"
         fill
         placeholder={toDataURL(
           loadingSkeletonXML(

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import useSWR from 'swr';
 import SearchInput from '@/components/SearchInput';
 import LimitDropdown from '@/components/LimitDropdown';
@@ -14,7 +14,7 @@ export default function Home() {
   const [searchMode, setSearchMode] = useState<boolean>(false);
   const [activeSearchQuery, setActiveSearchQuery] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [limit, setLimit] = useState(32);
+  const [limit, setLimit] = useState(30);
 
   // Fetching data 'from the client' because Giphy requires it.
   // This is actually making an API call to a Next.js route handler, which is
@@ -49,14 +49,13 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex h-[100px] w-full flex-row items-center justify-between px-[6px] py-2 md:px-10">
+      <div className="flex h-[100px] w-full flex-row items-center justify-between px-5 py-2 md:px-10">
         <LimitDropdown limit={limit} setLimit={setLimit} />
 
         <SearchInput
           id="search"
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
-          onButtonClick={handleSubmit}
         />
 
         <LightingPrefSelect />

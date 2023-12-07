@@ -4,7 +4,7 @@ import { LuSun as LightIcon, LuSunDim as DarkIcon } from 'react-icons/lu';
 
 export default function LightingPrefSelect() {
   const { darkMode, setDarkMode } = useContext(AppContext);
-  const classes = 'h-7 w-7';
+  const classes = 'h-[29px] w-[29px]';
 
   return (
     <button onClick={() => setDarkMode((prev) => !prev)}>
